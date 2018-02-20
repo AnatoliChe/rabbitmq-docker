@@ -7,7 +7,7 @@ After=docker.service
 Restart=always
 RestartSec=3
 ExecStartPre=/bin/sh -c "/usr/bin/docker rm -f rabbitmq 2> /dev/null || /bin/true"
-ExecStart=/usr/bin/docker run --rm -a STDIN -a STDOUT -a STDERR -p 5672:5672 --name rabbitmq rabbitmq:2.0
+ExecStart=/usr/bin/docker run --rm -a STDIN -a STDOUT -a STDERR -p 5672:5672 --name rabbitmq rabbitmq:latest
 ExecStop=/usr/bin/docker stop rabbitmq
 
 [Install]
